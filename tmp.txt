@@ -1,0 +1,48 @@
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"log"
+	"sort"
+	"unicode"
+)
+
+func main() {
+	// Path ke folder "kamus"
+	folderPath := "./kamus"
+
+	// Membaca isi folder "kamus"
+	files, err := ioutil.ReadDir(folderPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Membuat slice untuk menyimpan nama-nama file
+	var others []string
+	var alphabets []string
+
+	// Iterasi melalui nama-nama file
+	for _, file := range files {
+		fileName := file.Name()
+		// Memisahkan file yang diawali dengan huruf abjad (a-z)
+		if len(fileName) > 0 && unicode.IsLetter(rune(fileName[0])) {
+			alphabets = append(alphabets, fileName)
+		} else {
+			others = append(others, fileName)
+		}
+	}
+
+	// Mengurutkan nama file berdasarkan abjad
+	sort.Strings(alphabets)
+
+	// Menampilkan map
+	fmt.Println("dic := map[string]struct{}{")
+	for _, key := range others {
+		fmt.Printf("\t\"%s\": {},", key)
+	}
+	for _, key := range alphabets {
+		fmt.Printf("\t\"%s\": {},", key)
+	}
+	fmt.Println("}")
+}
