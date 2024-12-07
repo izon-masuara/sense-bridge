@@ -1,0 +1,7 @@
+nantinya setiap foto akan di masukan menjadi judul
+
+dan setiap audio akan menjadi konten
+
+dan di gabungakan atau di tambahkan ke dalam teks yang sudah ada berdasarkan id
+
+dan nantinya akan di generate di akhir berdasarkan id
