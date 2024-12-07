@@ -1,15 +1,15 @@
-Sense Bridge
+# Sense Bridge
 
-Step Instalation
+## Step Instalation
 
-OPEN_API_KEY is required
-Google CLI
+- OPEN_API_KEY is required
+- Google CLI
 
-Golang
-Mongodb
+- Golang
+- Mongodb
 
 ( Optional )
-Docker
-Docker-compose
+- Docker
+- Docker-compose
 
-COde DEVELOP BY KAUTSAR
+Code DEVELOP BY KAUTSAR
