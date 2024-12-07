@@ -1,0 +1,11 @@
+#video {
+    width: 320px;
+    height: 240px;
+    border: 1px solid black;
+}
+#canvas {
+    display: none;
+}
+#snap {
+    margin-top: 10px;
+}

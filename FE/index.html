@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SenseBridge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        /* overflow: hidden; */
+      }
+    </style>
+  </head>
+  <body
+    id="container"
+    class="bg-gray-100 font-sans leading-normal tracking-normal flex flex-col min-h-screen"
+  >
+    <main class="flex-grow flex flex-col">
+      <div
+        class="flex flex-col md:flex-row flex-grow"
+      >
+        <div
+          class="md:w-1/4 bg-white shadow-lg rounded-lg p-4 flex flex-col flex-shrink-0"
+        >
+          <ul
+            id="msg"
+            class="space-y-4 flex-grow overflow-y-auto max-h-[calc(100vh-200px)]"
+          ></ul>
+        </div>
+        <div
+          class="md:w-1/2 flex flex-col items-center bg-white shadow-lg rounded-lg p-4 flex-shrink-0"
+        >
+        <h1 class="text-2xl font-bold text-gray-700" >SenseBridge</h1>
+          <div
+            id="video-container"
+            class="w-full flex justify-center items-center flex-grow"
+          >
+            <div
+              class="w-[320px] h-[240px] md:w-[440px] md:h-[400px] bg-gray-400 flex justify-center items-center rounded-lg overflow-hidden flex-shrink-0"
+            >
+              <video
+                id="video-player"
+                autoplay
+                class="w-full h-full object-cover"
+              ></video>
+            </div>
+          </div>
+          <div>
+            <p id="code"></p>
+          </div>
+          <div class="mt-4 flex justify-center space-x-4 flex-shrink-0">
+            <button
+              id="startBtn"
+              class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition duration-300"
+            >
+              Start Detection
+            </button>
+            <button
+              id="stopBtn"
+              class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition duration-300"
+              disabled
+            >
+              Stop Detection
+            </button>
+          </div>
+          <div class="mt-2 text-center flex-shrink-0">
+            <p id="status" class="text-gray-700 text-lg">Status: Inactive</p>
+          </div>
+        </div>
+        <div
+          class="md:w-1/4 bg-white shadow-lg rounded-lg p-4 flex flex-col flex-shrink-0"
+        >
+          <div class="mb-4 flex-shrink-0">
+            <select
+              id="videoSource"
+              class="w-full p-2 border rounded-md"
+            ></select>
+          </div>
+          <div class="mb-4 flex-shrink-0">
+            <video
+              id="video"
+              autoplay
+              class="w-full h-auto rounded-md shadow"
+            ></video>
+          </div>
+          <div class="mb-4 flex justify-center flex-shrink-0">
+            <button
+              id="snap"
+              class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
+            >
+              Capture
+            </button>
+          </div>
+          <div class="mb-4 flex-shrink-0">
+            <canvas
+              id="canvas"
+              class="border rounded-md w-full"
+            ></canvas>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+    <script src="video.js"></script>
+  </body>
+</html>
